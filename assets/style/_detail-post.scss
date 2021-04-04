@@ -1,0 +1,55 @@
+.detail-post {
+  &__information {
+    margin-top: 20px;
+    display: block;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+
+    &-card {
+      margin: 0;
+      padding: 0;
+      padding: 0 0 10px 5px;
+      margin-top: 5px;
+      flex-wrap: nowrap;
+
+      &-pre {
+        overflow: hidden;
+        color: $primaryColor;
+      }
+
+      &-value {
+        overflow: hidden;
+        color: $tableContentColor;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__files {
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: white;
+
+    li {
+      overflow: hidden;
+      padding: 10px;
+      list-style-type: none;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    display: block;
+    justify-content: space-between;
+    text-align: start;
+    border-radius: 15px;
+    background-color: white;
+
+    span {
+      margin: 5px;
+      color: $primaryColor;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: $primaryColor;
+  background-color: $backgroudColor;
+
+  &__title {
+    text-align: center;
+    color: $primaryColor;
+  }
+
+  &__helped-label {
+    color: $greyTextColor;
+  }
+
+  &__confirm-btn {
+    background-color: $primaryColor;
+    color: white;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+
+    :hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.create-post {
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+
+  &__input-files {
+    cursor: pointer;
+    color: $primaryColor;
+    background-color: white;
+    position: relative;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+
+    input {
+      display: none;
+    }
+  }
+
+  &__btn-publish {
+    color: white;
+    background-color: $primaryColor;
+    height: 50px;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+
+    :hover {
+      color: grey;
+    }
+  }
+}
+
+.form-item {
+  // Form item input
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+
+  &__input {
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+  }
+
+  // Form item label
+  &__label {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid transparent;
+    padding: 10px;
+    margin: 0;
+    transition: background-color 0.2s;
+
+    img {
+      width: $size40;
+      height: $size40;
+    }
+  }
+
+  // List files
+  .list-files {
+    // стили для списка фалов
+    font-size: 0.85em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+
+    li {
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}

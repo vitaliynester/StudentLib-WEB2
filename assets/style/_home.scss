@@ -1,0 +1,93 @@
+.home {
+  &__grid-container {
+    width: 100%;
+    display: grid;
+    gap: 0 0;
+    grid-template-areas:
+          "card-archive card-image card-all"
+          "card-document card-other card-all";
+  }
+
+  &__card {
+    width: 95%;
+    text-align: start;
+    border-radius: 10px;
+    border-color: black;
+    background-color: white;
+    padding: 15px;
+    margin-top: 20px;
+    color: $primaryColor;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: $size45;
+      height: $size45;
+    }
+
+    &-count {
+      color: $greyTextColor;
+      padding-top: 10px;
+    }
+
+    &-all {
+      text-align: center;
+      justify-content: center;
+
+      img {
+        width: $size65;
+        height: $size65;
+        margin-top: 30%;
+      }
+
+      grid-area: card-all;
+      height: 90%;
+      justify-items: center;
+      display: grid;
+    }
+
+    &-archive {
+      grid-area: card-archive;
+    }
+
+    &-image {
+      grid-area: card-image;
+    }
+
+    &-document {
+      grid-area: card-document;
+    }
+
+    &-other {
+      grid-area: card-other;
+    }
+  }
+
+  &__posts {
+    &-title {
+      color: $primaryColor;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    &-table {
+      border-color: white;
+      border-radius: 10px;
+      border-collapse: separate;
+      text-align: center;
+      background-color: white;
+      width: 99%;
+      padding: 20px;
+      margin-bottom: 25px;
+
+      &-header {
+        color: $tableHeaderColor;
+      }
+
+      &-cell {
+        color: $tableContentColor;
+        padding: 10px;
+      }
+    }
+  }
+}

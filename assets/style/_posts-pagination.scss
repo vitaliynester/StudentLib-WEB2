@@ -1,0 +1,13 @@
+.button-line {
+  display: none;
+  margin: auto;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: $primaryColor;
+  }
+}
