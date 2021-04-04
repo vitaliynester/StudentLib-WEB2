@@ -1,0 +1,40 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - '5435:5432'
+    env_file:
+      - ./postgres/database.env
+    volumes:
+      - ./postgres/1-init.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./var/lib/postgresql/data:/var/lib/postgresql/data
+  php:
+    build: php-fpm
+    restart: always
+    ports:
+      - '9002:9000'
+    volumes:
+      - ../.:/var/www/student_lib:cached
+      - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
+    links:
+      - postgres
+  nginx:
+    restart: always
+    build: nginx
+    ports:
+      - '80:80'
+    links:
+      - php
+    volumes_from:
+      - php
+    volumes:
+      - ./var/logs/nginx/:/var/log/nginx:cached
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8181:8080'
+    links:
+      - postgres
