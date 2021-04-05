@@ -13,7 +13,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 80.76.42.191
-          username: michael
+          username: vitaly
           port: 7887
           key: ${{ secrets.WEB_LAB_KEY }}
           script: |
