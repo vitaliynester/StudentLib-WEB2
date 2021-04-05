@@ -20,7 +20,7 @@ services:
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
     links:
       - postgres
-    command: bash -c "cd /var/www/student_lib && mkdir uploads && composer install --prefer-dist && composer dump-autoload && php-fpm"
+    command: bash -c "cd /var/www/student_lib && mkdir -p uploads && composer install --prefer-dist && composer dump-autoload && php-fpm"
   nginx:
     restart: always
     build: nginx
