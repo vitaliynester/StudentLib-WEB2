@@ -28,9 +28,9 @@ services:
       - '80:80'
     links:
       - php
-    volumes_from:
-      - php
     volumes:
+      - ../.:/var/www/student_lib:cached
+      - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ./var/logs/nginx/:/var/log/nginx:cached
   adminer:
     image: adminer
