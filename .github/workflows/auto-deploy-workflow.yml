@@ -12,11 +12,11 @@ jobs:
       - name: Проверка подключения к серверу по SSH
         uses: appleboy/ssh-action@master
         with:
-          host: 80.76.42.191
-          username: vitaly
-          port: 7887
+          host: ${{ secrets.WEB_LAB_HOST }}
+          username: ${{ secrets.WEB_LAB_USERNAME }}
+          port: ${{ secrets.WEB_LAB_PORT }}
           key: ${{ secrets.WEB_LAB_KEY }}
           script: |
-            cd StudentLib-WEB2
+            cd dev/StudentLib-WEB2
             git pull origin master
             git status
