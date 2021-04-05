@@ -9,7 +9,7 @@ jobs:
     name: AutoDeploy
     runs-on: ubuntu-20.04
     steps:
-      - name: Проверка подключения к серверу по SSH
+      - name: Проверка подключения к серверу по SSH и сборка/запуск контейнеров Docker
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.WEB_LAB_HOST }}
