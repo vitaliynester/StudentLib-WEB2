@@ -1,0 +1,22 @@
+name: Автодеплой на тестовый сервер
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  job-one:
+    name: AutoDeploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Проверка подключения к серверу по SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 80.76.42.191
+          username: michael
+          port: 7887
+          key: ${{ secrets.WEB_LAB_KEY }}
+          script: |
+            cd StudentLib-WEB2
+            git pull origin master
+            git status
